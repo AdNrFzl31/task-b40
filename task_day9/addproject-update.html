@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="icon" type="image/x-icon" href="asset/image/logo.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap">
+</head>
+
+<body class="bg-secondary bg-opacity-10" style="font-family: Roboto, sans-serif;">
+    <nav class="navbar navbar-expand-lg bg-light p-2">
+        <div class="container-fluid mx-5">
+            <a class="navbar-brand">
+                <img src="/asset/image/logo.png" alt="Dumbways" width="30" height="24">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active text-dark" aria-current="page" href="/home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-dark fw-bold" href="/project">Add Project</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <a href="/contactMe">
+                        <button class="btn btn-dark py-1 px-4" type="button">Contact Me</button>
+                    </a>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid d-flex justify-content-center align-items-center">
+        <div class="container-form my-5 cmb-4 fw-bold col-4">
+            <h2 class="text-center">ADD MY PROJECT</h2>
+            <form action="/addproject-update.html" method="post">
+                <div class="mb-3">
+                    <label for="name" class="form-label fw-bold">Project Name</label>
+                    <input type="text" class="form-control" name="name"  id="name" value="{{.editProject.Name}}">
+                </div>
+                <div class="row">
+                    <div class="col mb-3">
+                        <label for="startDate" class="form-label fw-bold">Start Date</label>
+                        <input type="date" class="form-control" name="startDate" id="startDate" value="{{.editProject.StartDate}}">
+                    </div>
+                    <div class="col mb-3">
+                        <label for="endDate" class="form-label fw-bold">End Date</label>
+                        <input type="date" class="form-control" name="endDate" id="endDate" value="{{.editProject.EndDate}}">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="description" class="form-label fw-bold">Description</label>
+                    <textarea class="form-control" value="{{.editProject.Description}}" name="description" id="description" style="resize: none;" rows="5"></textarea>
+                </div>
+                <div class="mb-3">
+                    <label for="technologies" class="form-label fw-bold">Technologies</label>
+                    <div class="row">
+                        <div class="col form-check ms-3">
+                            <input class="form-check-input" type="checkbox" value="node-js" name="icon" id="nodeJs">
+                            <label class="form-check-label" for="nodeJs">
+                                Node Js
+                            </label>
+                        </div>
+                        <div class="col form-check">
+                            <input class="form-check-input" type="checkbox" value="square-js" name="icon" id="javascript">
+                            <label class="form-check-label" for="javascript">
+                                Javascript
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col form-check ms-3">
+                            <input class="form-check-input" type="checkbox" value="react" name="icon" id="reactJs">
+                            <label class="form-check-label" for="reactJs">
+                                React Js
+                            </label>
+                        </div>
+                        <div class="col form-check">
+                            <input class="form-check-input" type="checkbox" value="html5" name="icon" id="html5">
+                            <label class="form-check-label" for="html5">
+                                Html5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="formFileMultiple" class="form-label fw-bold">Upload Image</label>
+                    <input class="form-control" type="file" id="image" name="image" multiple>
+                </div>
+
+                <div class="d-flex justify-content-md-end mt-5">
+                    <button class="btn btn-dark py-1 px-5 rounded-pill" type="submit">Submit</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
